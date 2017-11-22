@@ -52,6 +52,8 @@ class Mlp:
             sess.run(train_step, feed_dict={x: batch_x, y_: batch_y})
 
             if i % 100 == 0:
-                test_accuracy = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
-                train_accuracy = sess.run(accuracy, feed_dict={x: mnist.train.images, y_: mnist.train.labels})
+                test_accuracy = sess.run(accuracy,
+                    feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+                train_accuracy = sess.run(accuracy,
+                    feed_dict={x: mnist.train.images, y_: mnist.train.labels})
                 print('{:d},{:1.5f},{:1.5f}'.format(i, train_accuracy, test_accuracy))
